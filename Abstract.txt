@@ -1,0 +1,10 @@
+Hello!
+Our process of counting straws will contain the following steps - 
+1. Convert image to black and white with high sensitivity.
+2. Count the number of ellipses formed. One ellipse = one straw. Hough transform or any other technique will be used for edge detection and counting.
+3. Mark each valid ellipse(straw) and count.
+
+We will be using ML to make the whole process more efficient. The system will be trained using online stock straw images. ML will be required to remove abstract counting of straws. There will be cases when there is a bright whote straw against a white brackground or when the straws are randomly placed. For cases like this ML will help in removing rogue cases. 
+
+Presently there are not many softwares present out there which does a similar work. After some searching our team found one work where frozen semen straws have been counted using image processing.
+Our work will be different as it will be more general and can be used for many purposes and not only for counting straws. It can be used to count for example number of pens in a stand. 
