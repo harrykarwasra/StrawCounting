@@ -1,4 +1,8 @@
+import numpy as np
+import cv2
 from PIL import Image
+from matplotlib import pyplot as plt
+
 
 # Method to process the red band of the image
 def normalizeRed(intensity):
@@ -32,7 +36,18 @@ def normalizeBlue(intensity):
     return iO
 
 
-imageObject = Image.open('C:\\Users\\harry\\Desktop\\Hackathon\\Images\\StrawHead.jpg')
+
+
+img = cv2.imread('C:\\Users\\harry\\Documents\\Github\\StrawCounting\\Images\\StrawHead.jpg')
+
+dst = cv2.fastNlMeansDenoisingColored(img,None,10,10,7,21)
+
+
+#plt.subplot(121),plt.imshow(img)
+#plt.subplot(122),plt.imshow(dst)
+cv2.imwrite('C:\\Users\\harry\\Documents\\Github\\StrawCounting\\Images\\StrawHead_Denoise.png',dst)
+
+imageObject = Image.open('C:\\Users\\harry\\Documents\\Github\\StrawCounting\\Images\\StrawHead_Denoise.png')
 #imageObject.save('C:\\Users\\harry\\Desktop\\Hackathon\\Images\\StrawHead3.png')
 
 # Split the red, green and blue bands from the Image
@@ -60,6 +75,6 @@ normalizedImage.show()
 # Cconvert image to grayscale
 normalizedImage1 = normalizedImage.convert("L")
 normalizedImage1.show()
-normalizedImage1.save('C:\\Users\\harry\\Desktop\\Hackathon\\Images\\GrayScale_StrawHead.png')
+normalizedImage1.save('C:\\Users\\harry\\Documents\\Github\\StrawCounting\\Images\\StrawHead_Denoise_CS_GrayScale.png')
 
 
