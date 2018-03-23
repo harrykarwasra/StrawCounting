@@ -125,16 +125,16 @@ def dynamic_threshold(image):
     radii_important = 1
     if(radii_len<2):
         radii_important = 1
-    print("Sorted array:",radii)
+    #print("Sorted array:",radii)
     avg_radius = np.average(radii[0:radii_important])
     avg_dp = np.average(sum_dp)
     avg_param2 = np.average(sum_param2)
     #print("Average dp array:",sum_dp)
-    print("Average dp:",avg_dp)
+    #print("Average dp:",avg_dp)
     #print("Average PARAM2 array:",sum_param2)
-    print("Average PARAM2:",avg_param2)
+    #print("Average PARAM2:",avg_param2)
     
-    print("Optimal Radius = ",avg_radius)
+    #print("Optimal Radius = ",avg_radius)
     
     final_arr = [avg_dp, avg_param2, avg_radius]
     return final_arr
